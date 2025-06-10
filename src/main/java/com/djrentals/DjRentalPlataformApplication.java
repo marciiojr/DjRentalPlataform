@@ -1,0 +1,13 @@
+package com.djrentals;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DjRentalPlataformApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DjRentalPlataformApplication.class, args);
+	}
+
+}
