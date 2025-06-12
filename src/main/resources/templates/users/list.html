@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Relatório de Usuários - DJ Rentals</title>
+  <title>Relatório de Usuários - Loca DJ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 <div class="min-h-screen">
-  <!-- Header -->
   <header class="bg-indigo-600 text-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold flex items-center">
-        <i class="fas fa-users mr-2"></i> DJ Rentals - Relatório de Usuários
+        <i class="fas fa-users mr-2"></i> Loca DJ - Relatório de Usuários
       </h1>
       <nav>
         <a th:href="@{/admin/dashboard}" class="text-white hover:text-gray-200 inline-flex items-center">
@@ -23,9 +22,7 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <main class="container mx-auto px-4 py-8">
-    <!-- Report Header -->
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
       <div>
         <h1 class="text-2xl font-bold text-gray-800">Usuários Cadastrados</h1>
@@ -38,7 +35,6 @@
       </button>
     </div>
 
-    <!-- Users Table -->
     <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
       <div class="overflow-x-auto">
         <table class="min-w-full divide-y divide-gray-200">
@@ -71,26 +67,23 @@
       </div>
     </div>
 
-    <!-- Empty State -->
     <div th:if="${#lists.isEmpty(users)}" class="bg-white rounded-lg shadow-sm p-8 text-center border border-gray-100 mt-6">
       <i class="fas fa-user-slash text-4xl text-gray-300 mb-4"></i>
       <h3 class="text-lg font-medium text-gray-700">Nenhum usuário cadastrado</h3>
       <p class="text-gray-500 mt-2">Não há usuários para exibir no relatório.</p>
     </div>
 
-    <!-- Report Footer -->
     <div class="mt-6 text-sm text-gray-500 text-right">
-      Relatório gerado pelo sistema DJ Rentals
+      Relatório gerado pelo sistema Loca DJ
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 mt-12">
     <div class="container mx-auto px-4 py-6">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <h3 class="text-lg font-semibold text-gray-800 flex items-center">
-            <i class="fas fa-headphones mr-2 text-indigo-600"></i> DJ Rentals
+            <i class="fas fa-headphones mr-2 text-indigo-600"></i> Loca DJ
           </h3>
           <p class="text-gray-500 text-sm mt-1">Sistema de Gestão</p>
         </div>

@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Kits - DJ Rentals</title>
+  <title>Lista de Kits - Loca DJ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 <div class="min-h-screen">
-  <!-- Header -->
+
   <header class="bg-indigo-600 text-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold flex items-center">
-        <i class="fas fa-headphones mr-2"></i> DJ Rentals - Kits
+        <i class="fas fa-headphones mr-2"></i> Loca DJ - Kits
       </h1>
       <nav>
         <a th:href="@{/admin/dashboard}" class="text-white hover:text-gray-200 mr-4">
@@ -23,9 +23,7 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <main class="container mx-auto px-4 py-8">
-    <!-- Page Header -->
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
       <div>
         <h1 class="text-2xl font-bold text-gray-800">Lista de Kits</h1>
@@ -36,7 +34,6 @@
       </a>
     </div>
 
-    <!-- Kits Table -->
     <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
       <div class="overflow-x-auto">
         <table class="min-w-full divide-y divide-gray-200">
@@ -87,7 +84,6 @@
       </div>
     </div>
 
-    <!-- Empty State -->
     <div th:if="${#lists.isEmpty(kits)}" class="bg-white rounded-lg shadow-sm p-8 text-center border border-gray-100 mt-6">
       <i class="fas fa-box-open text-4xl text-gray-300 mb-4"></i>
       <h3 class="text-lg font-medium text-gray-700">Nenhum kit cadastrado</h3>
@@ -98,18 +94,17 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 mt-12">
     <div class="container mx-auto px-4 py-6">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <h3 class="text-lg font-semibold text-gray-800 flex items-center">
-            <i class="fas fa-headphones mr-2 text-indigo-600"></i> DJ Rentals
+            <i class="fas fa-headphones mr-2 text-indigo-600"></i> Loca DJ
           </h3>
           <p class="text-gray-500 text-sm mt-1">Sistema de Gerenciamento de Kits</p>
         </div>
         <div class="text-sm text-gray-500">
-          &copy; <span th:text="${#temporals.year(#temporals.createToday())}"></span> DJ Rentals. Todos os direitos reservados.
+          &copy; <span th:text="${#temporals.year(#temporals.createToday())}"></span>  loca DJ. Todos os direitos reservados.
         </div>
       </div>
     </div>
@@ -117,7 +112,6 @@
 </div>
 
 <script>
-  // Confirmação para exclusão
   document.addEventListener('DOMContentLoaded', function() {
     const deleteButtons = document.querySelectorAll('a[onclick*="confirm"]');
     deleteButtons.forEach(button => {

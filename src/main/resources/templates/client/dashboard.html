@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Cliente - DJ Rentals</title>
+  <title>Dashboard Cliente - Loca DJ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 <div class="min-h-screen">
-  <!-- Header -->
   <header class="bg-indigo-600 text-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold flex items-center">
-        <i class="fas fa-headphones mr-2"></i> DJ Rentals
+        <i class="fas fa-headphones mr-2"></i> Loca DJ
       </h1>
       <div>
         <span class="hidden md:inline mr-4">Olá, <span th:text="${#authentication.principal.username}"></span></span>
@@ -26,9 +25,7 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <main class="container mx-auto px-4 py-8">
-    <!-- Welcome Section -->
     <section class="mb-10 bg-white rounded-lg shadow-sm p-6 border border-gray-100">
       <div class="flex items-center justify-between">
         <div>
@@ -41,7 +38,6 @@
       </div>
     </section>
 
-    <!-- Kits Section -->
     <section class="mb-10">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-xl font-semibold text-gray-800">
@@ -52,7 +48,6 @@
         </div>
       </div>
 
-      <!-- Filtros (opcional) -->
       <div class="mb-6 flex flex-wrap gap-3">
         <button class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium hover:bg-indigo-200 transition-colors">
           Todos
@@ -65,15 +60,12 @@
         </button>
       </div>
 
-      <!-- Grid de Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <div th:each="kit : ${kits}" class="kit-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:border-indigo-200">
-          <!-- Imagem do Kit -->
           <div class="h-48 bg-gray-200 relative overflow-hidden">
             <img th:src="${kit.imageUrl != null} ? ${kit.imageUrl} : '/images/default-kit.jpg'"
                  alt="Kit DJ"
                  class="w-full h-full object-cover">
-            <!-- Tag de disponibilidade -->
             <span th:if="${kit.quantity > 0}"
                   class="absolute top-2 right-2 px-2 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">
               Disponível
@@ -84,7 +76,6 @@
             </span>
           </div>
 
-          <!-- Corpo do Card -->
           <div class="p-4">
             <div class="flex justify-between items-start">
               <h3 class="font-semibold text-lg text-gray-800" th:text="${kit.name}"></h3>
@@ -113,7 +104,6 @@
       </div>
     </section>
 
-    <!-- Reservations Section -->
     <section>
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-xl font-semibold text-gray-800">
@@ -164,18 +154,17 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 mt-12">
     <div class="container mx-auto px-4 py-6">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <h3 class="text-lg font-semibold text-gray-800 flex items-center">
-            <i class="fas fa-headphones mr-2 text-indigo-600"></i> DJ Rentals
+            <i class="fas fa-headphones mr-2 text-indigo-600"></i> Loca DJ
           </h3>
           <p class="text-gray-500 text-sm mt-1">Sua melhor opção em equipamentos de DJ</p>
         </div>
         <div class="text-sm text-gray-500">
-          &copy; <span th:text="${#temporals.year(#temporals.createToday())}"></span> DJ Rentals. Todos os direitos reservados.
+          &copy; <span th:text="${#temporals.year(#temporals.createToday())}"></span> Loca DJ. Todos os direitos reservados.
         </div>
       </div>
     </div>
@@ -183,7 +172,6 @@
 </div>
 
 <script>
-  // Adiciona confirmação para ações importantes
   document.addEventListener('DOMContentLoaded', function() {
     const cancelButtons = document.querySelectorAll('a[onclick*="confirm"]');
     cancelButtons.forEach(button => {
